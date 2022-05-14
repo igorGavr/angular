@@ -9,6 +9,10 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { UserComponent } from './components/user/user.component';
 import { PostComponent } from './components/post/post.component';
 import { CommentComponent } from './components/comment/comment.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
+import {RouterModule} from "@angular/router";
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +22,31 @@ import { CommentComponent } from './components/comment/comment.component';
     CommentsComponent,
     UserComponent,
     PostComponent,
-    CommentComponent
+    CommentComponent,
+    UserDetailsComponent,
+    HomePageComponent,
+    PostDetailsComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        RouterModule.forRoot([
+          {path: '', redirectTo: 'home-page', pathMatch: 'full'},
+          {path: 'home-page', component: HomePageComponent},
+          {
+            path: 'users-page', component: UsersComponent,
+            children: [
+              {path: 'user-details/:id', component: UserDetailsComponent}
+            ]
+          },
+          {
+            path: 'posts-page', component: PostsComponent,
+            children: [
+              {path: 'post-details/:id', component: PostDetailsComponent}
+            ]
+          }
+        ])
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
