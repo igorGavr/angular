@@ -15,6 +15,8 @@ export class PostDetailsComponent implements OnInit {
     this.activatedRoute.params.subscribe(value => {
       // @ts-ignore
       console.log(this.router.getCurrentNavigation().extras.state['data'] as IPost)
+      // @ts-ignore
+      this.postDetailsObj = this.router.getCurrentNavigation()?.extras.state['data'] as IPost;
     })
 
   }

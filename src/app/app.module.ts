@@ -13,6 +13,7 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
 import {RouterModule} from "@angular/router";
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { CommentDetailsComponent } from './components/comment-details/comment-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PostDetailsComponent } from './components/post-details/post-details.com
     CommentComponent,
     UserDetailsComponent,
     HomePageComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    CommentDetailsComponent
   ],
     imports: [
         BrowserModule,
@@ -34,17 +36,18 @@ import { PostDetailsComponent } from './components/post-details/post-details.com
           {path: '', redirectTo: 'home-page', pathMatch: 'full'},
           {path: 'home-page', component: HomePageComponent},
           {
-            path: 'users-page', component: UsersComponent,
-            children: [
+            path: 'users-page', component: UsersComponent, children: [
               {path: 'user-details/:id', component: UserDetailsComponent}
             ]
           },
           {
-            path: 'posts-page', component: PostsComponent,
-            children: [
+            path: 'posts-page', component: PostsComponent, children: [
               {path: 'post-details/:id', component: PostDetailsComponent}
             ]
-          }
+          },
+          {path: 'comments-page', component: CommentsComponent, children: [
+              {path: 'comment-details/:id', component: CommentDetailsComponent}
+            ]}
         ])
     ],
   providers: [],

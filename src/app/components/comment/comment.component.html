@@ -1,6 +1,6 @@
 <div>
   {{comment.id}}
   {{comment.postId}}
-  {{comment.body}}
-  {{comment.email}}
+  {{comment.name}}
+  <a [routerLink]="['comment-details', comment.id]" [state]="{data: comment}">details</a>
 </div>
