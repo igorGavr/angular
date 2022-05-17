@@ -18,9 +18,9 @@ export class UserDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(({id}) => {
       // const state = this.router.getCurrentNavigation()?.extras?.state?.['user'] as IUser;
-      const state = history.state
-      if (!id) {
-        this.userDetails = state
+      const {state: {data}} = history
+      if (data) {
+        this.userDetails = data
       } else {
         this.userService.getById(id).subscribe(value => this.userDetails = value)
       }
