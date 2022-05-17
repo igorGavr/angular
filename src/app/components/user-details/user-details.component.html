@@ -1,1 +1,6 @@
-<p>{{userDetails | json}}</p>
+<div *ngIf="userDetails">
+  <div>id: {{userDetails.id}}</div>
+  <div>name: {{userDetails.name}}</div>
+  <div>username: {{userDetails.username}}</div>
+  <div>email: {{userDetails.email}}</div>
+</div>

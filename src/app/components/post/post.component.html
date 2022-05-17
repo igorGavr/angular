@@ -1,6 +1,6 @@
-<div>
+<div *ngIf="post">
   {{post.id}}
   {{post.userId}}
   {{post.title}}
-  <button (click)="navigateMe(post)">details</button>
+  <button (click)="getDetails()">details</button>
 </div>

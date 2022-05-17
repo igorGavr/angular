@@ -1,3 +1,6 @@
-<app-post *ngFor="let post of posts" [post]="post"></app-post>
-<hr>
-<router-outlet></router-outlet>
+<div>
+  <div>
+    <app-post *ngFor="let post of posts" [post]="post"></app-post>
+  </div>
+  <router-outlet></router-outlet>
+</div>

@@ -15,7 +15,7 @@ export class PostService {
   getAll():Observable<IPost[]> {
     return this.httpClient.get<IPost[]>(urls.posts)
   }
-  getById(id:number):Observable<IPost> {
-    return this.httpClient.get<IPost>(urls.posts+'/'+id)
+  getById(id:string):Observable<IPost> {
+    return this.httpClient.get<IPost>(`${urls.posts}/${id}`)
   }
 }

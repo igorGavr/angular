@@ -1,6 +1,3 @@
-<div>
-  {{user.id}}
-  {{user.name}}
-<!--  <a routerLink="user-details/{{user.id}}">details</a>-->
-  <a [routerLink]="['user-details', user.id]"  >details</a>
+<div routerLinkActive="active">
+  {{user.id}}.) <a routerLink="{{user.id}}" [state]="{user}">{{user.name}}</a>
 </div>
