@@ -12,7 +12,10 @@ export class UsersComponent implements OnInit {
   constructor(private userDataService: UsersDataService) { }
 
   ngOnInit(): void {
-    this.userDataService.getAll().subscribe(value => this.users = value )
+    this
+      .userDataService
+      .getAll()
+      .subscribe(value => this.users = value )
   }
 
 }
