@@ -1,0 +1,14 @@
+.border{
+  border: 2px solid red;
+  background-color: #f8edff;
+}
+.top-menu {
+  background-color: darkseagreen;
+}
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+ul li{
+  font-size: 34px;
+}
