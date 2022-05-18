@@ -1,1 +1,6 @@
-<p>{{comment.id}} - {{comment.email}}</p>
+<div routerLinkActive="active">
+  {{comment.id}} -
+  <div>
+    <a routerLink="{{comment.id}}" [state]="{comment}">{{comment.email}}</a>
+  </div>
+</div>

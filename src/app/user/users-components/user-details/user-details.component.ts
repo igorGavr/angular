@@ -22,7 +22,7 @@ export class UserDetailsComponent implements OnInit {
       if (data) {
         this.user = data
       }else {
-        this.userDataService.getById(id).subscribe(value => this.user = value)
+        this.userDataService.getById(+id).subscribe(value => this.user = value)
       }
     })
   }

@@ -1,1 +1,4 @@
-<p>{{post.id}} - {{post.title}}</p>
+<div routerLinkActive="active">
+  {{post.id}} -
+  <div><a routerLink="{{post.id}}" [state]="{post}">{{post.title}}</a></div>
+</div>
