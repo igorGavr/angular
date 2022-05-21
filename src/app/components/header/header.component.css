@@ -1,0 +1,6 @@
+.menu{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 34px;
+  background-color: darkseagreen;
+}
