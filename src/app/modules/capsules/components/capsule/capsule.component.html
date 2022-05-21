@@ -1,4 +1,4 @@
-<div>
-  {{capsule.capsule_id}}
-  {{capsule.capsule_serial}}
+<div routerLinkActive="active">
+  {{capsule.capsule_id}} <a routerLink="{{capsule.capsule_serial}}"
+  [state]="capsule">{{capsule.capsule_serial}}</a>
 </div>

@@ -20,5 +20,10 @@ export class CapsulesService {
       )
   }
 
+  getOneCapsule(capsule_serial: string): Observable<ICapsules>{
+    return this.httpClient
+      .get<ICapsules>(urls.capsules+'/'+capsule_serial)
+  }
+
 
 }
