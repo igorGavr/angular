@@ -1,13 +1,15 @@
+import {CapsulesService} from "./services/capsules.service";
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {CapsulesService} from "./services/capsules.service";
+import {HttpClientModule} from "@angular/common/http";
+
 import { CapsulesComponent } from './components/capsules/capsules.component';
 import {CapsulesRoutingModule} from "./capsules-routing.module";
-import {HttpClientModule} from "@angular/common/http";
 import {CapsulesResolver} from "./services/resolvers/capsules.resolver";
 import { CapsuleComponent } from './components/capsule/capsule.component';
 import {CapsulesGuard} from "./services/guards/capsules.guard";
 import { CapsulesDetailsComponent } from './components/capsules-details/capsules-details.component';
+import {CapsuleResolver} from "./services/resolvers/capsule.resolver";
 
 
 
@@ -25,6 +27,7 @@ import { CapsulesDetailsComponent } from './components/capsules-details/capsules
   providers: [
     CapsulesService,
     CapsulesResolver,
+    CapsuleResolver,
     CapsulesGuard
   ]
 })

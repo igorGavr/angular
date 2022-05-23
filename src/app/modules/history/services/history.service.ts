@@ -1,30 +1,26 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {catchError, map, Observable, throwError} from "rxjs";
-
-import {ICapsules} from "../interfaces";
+import {IHistory} from "../interfaces";
 import {urls} from "../../../constants";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CapsulesService {
+export class HistoryService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getAll(): Observable<ICapsules[]>{
+  getAll(): Observable<IHistory[]>{
     return this.httpClient
-      .get<ICapsules[]>(urls.capsules)
+      .get<IHistory[]>(urls.history)
       .pipe(
         map(value => value),
-        catchError(err => throwError('error capsules'))
+        catchError(err => throwError('history error'))
       )
   }
-
-  getOneCapsule(capsule_serial: string): Observable<ICapsules>{
+  getStory(id: string): Observable<IHistory>{
     return this.httpClient
-      .get<ICapsules>(urls.capsules+'/'+capsule_serial)
+      .get<IHistory>(urls.history+'/'+id)
   }
-
-
 }

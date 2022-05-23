@@ -22,8 +22,7 @@ export class CapsulesDetailsComponent implements OnInit {
       if (state) {
         this.capsule = state;
       }else {
-        this.capsulesService.getOneCapsule(capsule_serial)
-          .subscribe(value => this.capsule = value)
+        this.activatedRoute.data.subscribe(({capsuleData}) => this.capsule = capsuleData)
       }
     })
   }

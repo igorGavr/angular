@@ -10,7 +10,8 @@ const routes: Routes = [
     path: '', component: MainLayoutComponent, children: [
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: 'home', component: HomeComponent},
-      {path: 'capsules', loadChildren: () => import('./modules').then(value => value.CapsulesModule)}
+      {path: 'capsules', loadChildren: () => import('./modules').then(value => value.CapsulesModule)},
+      {path: 'history', loadChildren: () => import('./modules').then(value => value.HistoryModule)}
     ]
   }
 ]
