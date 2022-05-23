@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {HttpClientModule} from "@angular/common/http";
 
 import { RocketsRoutingModule } from './rockets-routing.module';
-import {HttpClientModule} from "@angular/common/http";
 import {RocketService} from "./services";
 import { RocketsComponent } from './components/rockets/rockets.component';
 import { RocketComponent } from './components/rocket/rocket.component';
