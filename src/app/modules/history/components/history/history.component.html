@@ -1,4 +1,9 @@
-<p>history works!</p>
-<app-story *ngFor="let s of history" [story]="s"></app-story>
+<div class="flex">
+  <div class="history">
+    <app-story *ngFor="let s of history" [story]="s"></app-story>
+  </div>
+  <div class="outlet">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 
-<router-outlet></router-outlet>

@@ -15,7 +15,8 @@ import {HistoryService} from "../history.service";
 export class HistoryResolver implements Resolve<IHistory[]> {
   constructor(private historyService: HistoryService) {
   }
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IHistory[]> | Promise<IHistory[]> | IHistory[] {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot)
+    : Observable<IHistory[]> | Promise<IHistory[]> | IHistory[] {
     return this.historyService.getAll();
   }
 

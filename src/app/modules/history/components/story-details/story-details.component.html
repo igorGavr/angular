@@ -1,9 +1,8 @@
-<div *ngIf="story">
+<div class="wrap-details" *ngIf="story">
+  <div>{{story.id}}</div>
   <div>{{story.title}}</div>
   <div>{{story.details}}</div>
-  <div>{{story.flight_number}}</div>
-  <div><a href="{{story.links.article}}">spaceX article</a></div>
-  <div><a href="{{story.links.wikipedia}}">wikipedia article</a></div>
-
-
+  <div>Flight number - {{story.flight_number}}</div>
+  <button><a href="{{story.links.article}}">spaceX article</a></button>
+  <button><a href="{{story.links.wikipedia}}">wikipedia article</a></button>
 </div>

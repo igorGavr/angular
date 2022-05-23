@@ -1,0 +1,16 @@
+.flex{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 34px;
+  background-color: #e8c0c0;
+
+}
+.history{
+  background-color: darkseagreen;
+  border-radius: 5%;
+  padding: 23px;
+  width: 45%;
+}
+.outlet{
+  width: 45%;
+}

@@ -9,6 +9,7 @@ import { StoryComponent } from './components/story/story.component';
 import {HistoryService} from "./services";
 import {HistoryResolver} from "./services/resolvers/history.resolver";
 import { StoryDetailsComponent } from './components/story-details/story-details.component';
+import {HistoryGuard} from "./services/guards/history.guard";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { StoryDetailsComponent } from './components/story-details/story-details.
   ],
   providers: [
     HistoryService,
-    HistoryResolver
+    HistoryResolver,
+    HistoryGuard
   ]
 })
 export class HistoryModule { }

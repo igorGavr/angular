@@ -1,4 +1,7 @@
-<p>capsules works!</p>
-<app-capsule *ngFor="let c of capsules" [capsule]="c"></app-capsule>
+<div class="flex">
+  <div>
+    <app-capsule *ngFor="let c of capsules" [capsule]="c"></app-capsule>
+  </div>
+  <router-outlet></router-outlet>
+</div>
 
-<router-outlet></router-outlet>
