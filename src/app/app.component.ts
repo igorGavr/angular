@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {UserService} from "./services/user.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: []
 })
 export class AppComponent {
-  title = 'angular';
+  id = 0;
+  constructor(private userService: UserService) {
+
+  }
+  getUser(): void {
+    this.userService.getUserById(this.id)
+      .subscribe(value => console.log(value))
+  }
 }
