@@ -5,6 +5,7 @@ import {HistoryComponent} from "./components/history/history.component";
 import {HistoryResolver} from "./services/resolvers/history.resolver";
 import {StoryDetailsComponent} from "./components/story-details/story-details.component";
 import {HistoryGuard} from "./services/guards/history.guard";
+import {StoryResolver} from "./services/resolvers/story.resolver";
 
 const routes: Routes = [
   {
@@ -13,7 +14,7 @@ const routes: Routes = [
     canActivate: [HistoryGuard],
     canDeactivate:[HistoryGuard],
     children: [
-      {path: ':id', component: StoryDetailsComponent}
+      {path: ':id', component: StoryDetailsComponent, resolve: {storyData: StoryResolver}}
     ]
   }
 ];

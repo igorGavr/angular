@@ -12,9 +12,16 @@ import {CapsulesService} from "../capsules.service";
   providedIn: 'root'
 })
 export class CapsuleResolver implements Resolve<ICapsules> {
-  constructor(private capsulesService: CapsulesService) {
+  constructor(private capsulesService: CapsulesService,
+              private router: Router) {
   }
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<ICapsules> | Promise<ICapsules> | ICapsules {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot)
+    : Observable<ICapsules> | Promise<ICapsules> | ICapsules {
+    const capsule = this.router.getCurrentNavigation()?.extras?.state?.['capsule'] as ICapsules;
+    if (capsule) {
+      console.log(capsule)
+      return capsule
+    }
     let capsule_serial = route.params['capsule_serial']
     return this.capsulesService.getOneCapsule(capsule_serial);
   }

@@ -10,19 +10,9 @@ import {RocketService} from "../../services";
 })
 export class RocketDetailsComponent implements OnInit {
   rocket: IRocket;
-  constructor(private activatedRoute: ActivatedRoute,
-              private router: Router,
-              private rocketService: RocketService) { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({rocket_id}) => {
-      const {state: {data}} = history;
-      if (data) {
-        this.rocket = data
-      }else {
-        this.rocketService.getRocket(rocket_id).subscribe(value => this.rocket = value)
-      }
-    })
+    this.activatedRoute.data.subscribe(({rocketSingleData}) => this.rocket = rocketSingleData)
   }
-
 }

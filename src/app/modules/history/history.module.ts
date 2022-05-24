@@ -10,6 +10,7 @@ import {HistoryService} from "./services";
 import {HistoryResolver} from "./services/resolvers/history.resolver";
 import { StoryDetailsComponent } from './components/story-details/story-details.component';
 import {HistoryGuard} from "./services/guards/history.guard";
+import {StoryResolver} from "./services/resolvers/story.resolver";
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {HistoryGuard} from "./services/guards/history.guard";
   providers: [
     HistoryService,
     HistoryResolver,
+    StoryResolver,
     HistoryGuard
   ]
 })

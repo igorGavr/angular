@@ -8,6 +8,7 @@ import { RocketsComponent } from './components/rockets/rockets.component';
 import { RocketComponent } from './components/rocket/rocket.component';
 import { RocketDetailsComponent } from './components/rocket-details/rocket-details.component';
 import {RocketsResolver} from "./services/resolvers/rockets.resolver";
+import {RocketResolver} from "./services/resolvers/rocket.resolver";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {RocketsResolver} from "./services/resolvers/rockets.resolver";
   ],
   providers: [
     RocketService,
-    RocketsResolver
+    RocketsResolver,
+    RocketResolver
   ]
 })
 export class RocketsModule { }

@@ -10,19 +10,10 @@ import {HistoryService} from "../../services";
 })
 export class StoryDetailsComponent implements OnInit {
   story: IHistory;
-  constructor(private activatedRoute: ActivatedRoute,
-              private historyService: HistoryService,
-              private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({id}) => {
-      const {state: {data}} = history
-      if (data) {
-        this.story = data
-      }else {
-        this.historyService.getStory(id).subscribe(value => this.story = value)
-      }
-    })
+    this.activatedRoute.data.subscribe(({storyData}) => this.story = storyData)
   }
 
 }

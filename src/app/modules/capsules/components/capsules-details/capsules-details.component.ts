@@ -11,20 +11,9 @@ import {ICapsules} from "../../interfaces";
 export class CapsulesDetailsComponent implements OnInit {
   capsule: ICapsules;
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private router: Router,
-              private capsulesService: CapsulesService) { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({capsule_serial}) => {
-      const state = this.router
-        .getCurrentNavigation()?.extras?.state?.['capsule'] as ICapsules;
-      if (state) {
-        this.capsule = state;
-      }else {
-        this.activatedRoute.data.subscribe(({capsuleData}) => this.capsule = capsuleData)
-      }
-    })
+    this.activatedRoute.data.subscribe(({capsuleData}) => this.capsule = capsuleData)
   }
-
 }
