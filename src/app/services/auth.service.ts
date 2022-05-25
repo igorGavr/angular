@@ -23,6 +23,9 @@ export class AuthService {
   getToken():string{
     return localStorage.getItem(this.accessTokenKey) as string;
   }
+  deleteToken(): void {
+    localStorage.removeItem(this.accessTokenKey)
+  }
   isAuthorization():boolean{
     return !!localStorage.getItem(this.accessTokenKey)
   }
